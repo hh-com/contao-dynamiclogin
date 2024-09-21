@@ -1,0 +1,13 @@
+<?php if ($this->pathToLoginPage): ?>
+<div class="loginframe js-loginframe">
+    
+    <iframe 
+        src="<?= $this->pathToLoginPage ?>"
+        class="lgnframe"
+        data-loginredirect="<?= $this->loginredirect ?>"
+    ></iframe>
+
+    <span class="closeLoginFrame js-closeLoginFrame">X</span>
+
+</div>
+<?php endif; ?>

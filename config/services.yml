@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    _instanceof:
+        Contao\CoreBundle\Framework\FrameworkAwareInterface:
+            calls:
+                - ["setFramework", ["@contao.framework"]]                
+
+    dynamiclogin.listener.getPageLayoutListener:
+        class: Hhcom\ContaoDynamicLogin\EventListener\GetPageLayoutListener
+        arguments:
+            - "@request_stack"
+        tags:
+            - { name: contao.hook, hook: getPageLayout }

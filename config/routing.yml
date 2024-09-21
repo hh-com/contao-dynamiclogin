@@ -1,0 +1,13 @@
+dynamiclogin.controller.loadIframe:
+    path: /loadiframe/{loginModulId}
+    defaults:
+        _controller: Hhcom\ContaoDynamicLogin\Controller\AjaxController::loadIframe
+        _scope: frontend
+        _token_check: false
+        
+dynamiclogin.controller.loadIframelocale:
+    path: /{_locale}/loadiframe/{loginModulId}
+    defaults:
+        _controller: Hhcom\ContaoDynamicLogin\Controller\AjaxController::loadIframe
+        _scope: frontend
+        _token_check: false
