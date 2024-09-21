@@ -1,6 +1,6 @@
 ## Dynamic Login for Contao Bundle (Contao 5)
 
-The module provides a dynamic login form for Contao, loaded via a button click and displayed in an iFrame. This prevents the main page from reloading with incorrect login attempts. Upon successful login, the user is automatically redirected, triggering a full page reload.
+**EN** The module provides a dynamic login form for Contao, loaded via a button click and displayed in an iFrame. This prevents the main page from reloading with incorrect login attempts. Upon successful login, the user is automatically redirected, triggering a full page reload.
 
 
 **DE** Das Modul ermöglicht ein dynamisches Login-Formular für Contao, das per Klick nachgeladen und in einem iFrame angezeigt wird. Dadurch bleibt die Hauptseite bei falschen Eingaben unverändert. Bei korrekter Eingabe der Login-Daten erfolgt eine automatische Weiterleitung, die die Seite neu lädt.
