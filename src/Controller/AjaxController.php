@@ -73,7 +73,8 @@ class AjaxController
             $redirect = $request->headers->get('REFERER');
         } elseif ($module->jumpTo) {
             $page = PageModel::findByPk($module->jumpTo);
-            $redirect = System::getContainer()->get('contao.routing.content_url_generator')->generate($page);
+            $redirect = $page->alias;
+            //$redirect = System::getContainer()->get('contao.routing.content_url_generator')->generate($page);
         } else {
 
         }
@@ -93,7 +94,8 @@ class AjaxController
 
         $page = PageModel::findByPk($module->iframepage);
         if ($page) {
-            $iframepage = System::getContainer()->get('contao.routing.content_url_generator')->generate($page);
+            $iframepage = $page->alias;
+            //$iframepage = System::getContainer()->get('contao.routing.content_url_generator')->generate($page);
         }
 
 
