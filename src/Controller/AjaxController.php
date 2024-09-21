@@ -38,11 +38,20 @@ class AjaxController
         }
         
         //$_locale = $request->get('_locale'); // de || en ...
-        $loginModulId = $request->get('loginModulId');
+        $rootPageId = $request->get('lgnRoot');
+
+        if ($rootPageId == null) {
+            return new Response( "" ); 
+        }
+
+        $rootPageModel = PageModel::findByPk($rootPageId);
+        if ($rootPageModel == null) {
+            return new Response( "" );
+        }
 
         $template = new FrontendTemplate('mod_dynamiclogin');
-        $template->pathToLoginPage = $this->getLoginPageFromModule($loginModulId);
-        $template->loginredirect = $this->getRedirectionPageFromModule($loginModulId, $request);
+        $template->pathToLoginPage = $this->getLoginPageFromModule($rootPageModel->loginModule);
+        $template->loginredirect = $this->getRedirectionPageFromModule($rootPageModel->loginModule, $request);
         $output = $template->parse();
         
         return new Response( $output );
